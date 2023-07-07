@@ -110,4 +110,22 @@ export const Screen = styled.div`
   .end button:hover{
     scale: 1;
   }
+
+
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 50vh;
+    .selection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    textarea{
+      width: 80%;
+    }
+    button{
+      width: 80%;
+    }
+  } 
 `;
