@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Screen } from "./widgets.style";
 
+import verfiqued from "../../public/Success.png";
 import bug from "../../public/one.png";
 import lampada from "../../public/Emoji.png";
 import nuvem from "../../public/Thought.png";
@@ -11,6 +12,7 @@ import { useEffect, useState } from "react";
 
 export default function Widgets() {
   const [item, setItem] = useState<any | undefined>();
+  const [submit, setsubmit] = useState(false);
 
   const bugs = {
     msg: "Problema",
@@ -38,6 +40,15 @@ export default function Widgets() {
     screenBack?.setAttribute("style", "display: none");
     content?.setAttribute("style", "display: flex");
   };
+
+  const handlersubmit = () => {
+    setsubmit(true);
+    const content = document.getElementById("screen-one");
+    const screenBack = document.getElementById("screen-two");
+    screenBack?.setAttribute("style", "display: none");
+    content?.setAttribute("style", "display: none");
+  };
+
   return (
     <div className="content" id="content">
       <Screen id="screen-one">
@@ -98,7 +109,31 @@ export default function Widgets() {
             style={{ display: "flex", flexDirection: "column" }}
           >
             <textarea cols={48} rows={5}></textarea>
-            <button>Enviar Feedback</button>
+            <button onClick={handlersubmit}>Enviar Feedback</button>
+          </div>
+          <p>
+            Feito com ♥ por{" "}
+            <a href="https://github.com/Igordevz" target="_blank">
+              Igor
+            </a>
+          </p>
+        </Screen>
+      ) : (
+        <div></div>
+      )}
+
+      {submit ? (
+        <Screen>
+          <div className="end">
+            <Image src={verfiqued} alt="emoji verifiqued" />
+            <h1>Agradecemos o feedback!</h1>
+            <button
+              onClick={() => {
+                location.reload();
+              }}
+            >
+              Quero enviar outro
+            </button>
           </div>
           <p>
             Feito com ♥ por{" "}

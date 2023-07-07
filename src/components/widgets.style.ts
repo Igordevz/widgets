@@ -83,4 +83,31 @@ export const Screen = styled.div`
   a {
     color: gray;
   }
+  .end{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+  }
+  .end h1{
+    font-size: 23px;
+  }
+  .end button{
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: #27272A;
+    width: 70%;
+    transition:  1s;
+    scale: 0.9;
+  }
+  .end button:hover{
+    scale: 1;
+  }
 `;
