@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 export const Screen = styled.div`
   background: #18181b;
   width: 375px;
+  position: relative;
   height: 280px;
   display: flex;
   flex-direction: column;
@@ -14,6 +15,12 @@ export const Screen = styled.div`
   .title {
     font-size: 23px;
     color: white;
+  }
+  .title .arrow-left{
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 10px;
   }
   .selection {
     gap: 10px;
